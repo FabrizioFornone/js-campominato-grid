@@ -1,0 +1,32 @@
+body {
+    background-color: cornsilk;
+}
+
+
+/* classi JS */
+
+.square {
+    height: 50px;
+    width: 50px;
+    border: 1px solid #000;
+    background-color: whitesmoke;
+}
+
+.square.azure {
+    background-color: aquamarine;
+}
+
+.width-500 {
+    width: 500px;
+    margin: 0 auto;
+}
+
+.width-450 {
+    width: 450px;
+    margin: 0 auto;
+}
+
+.width-350 {
+    width: 350px;
+    margin: 0 auto;
+}
