@@ -15,6 +15,9 @@ function easyBoxGenerator(container) {
   newBox.className = "square";
   // append al container
   container.append(newBox);
+//   container.innerText = num
+  container.classList.remove("width-350");
+  container.classList.remove("width-450");
   container.classList.add("width-500");
   newBox.addEventListener("click", function () {
     console.log(this);
@@ -31,6 +34,8 @@ function mediumBoxGenerator(container) {
   newBox.className = "square";
   // append al container
   container.append(newBox);
+  container.classList.remove("width-350");
+  container.classList.remove("width-500");
   container.classList.add("width-450");
   newBox.addEventListener("click", function () {
     console.log(this);
@@ -47,6 +52,8 @@ function hardBoxGenerator(container) {
   newBox.className = "square";
   // append al container
   container.append(newBox);
+  container.classList.remove("width-500");
+  container.classList.remove("width-450");
   container.classList.add("width-350");
   newBox.addEventListener("click", function () {
     console.log(this);
@@ -54,7 +61,7 @@ function hardBoxGenerator(container) {
   });
 }
 
-// funzione "newGame" generator
+// funzione "newGame" generator, "difficultyGenerator è a sua volta una funzione"
 
 function newGame(stampGrill, numberOfSquare, difficultyGenerator) {
   stampGrill.innerHTML = "";
