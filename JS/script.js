@@ -67,6 +67,7 @@ const button3 = document.getElementById("js-btn-hook3");
 // button1 genera ciclo for per creare griglia facile
 
 button1.addEventListener("click", function () {
+  stampHtml.innerHTML = "";
   for (i = 1; i <= 100; i++) {
     easyBoxGenerator(stampHtml);
   }
@@ -75,6 +76,7 @@ button1.addEventListener("click", function () {
 // button2 genera ciclo for per creare griglia facile
 
 button2.addEventListener("click", function () {
+  stampHtml.innerHTML = "";
   for (i = 1; i <= 81; i++) {
     mediumBoxGenerator(stampHtml);
   }
@@ -83,6 +85,7 @@ button2.addEventListener("click", function () {
 // button1 genera ciclo for per creare griglia facile
 
 button3.addEventListener("click", function () {
+  stampHtml.innerHTML = "";
   for (i = 1; i <= 49; i++) {
     hardBoxGenerator(stampHtml);
   }
