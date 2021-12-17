@@ -54,6 +54,15 @@ function hardBoxGenerator(container) {
   });
 }
 
+// funzione "newGame" generator
+
+function newGame(stampGrill, numberOfSquare, difficultyGenerator) {
+  stampGrill.innerHTML = "";
+  for (i = 1; i <= numberOfSquare; i++) {
+    difficultyGenerator(stampGrill);
+  }
+}
+
 // dichiarazione costanti associate ad elementi del DOM
 
 const stampHtml = document.querySelector(".hook-js");
@@ -67,26 +76,17 @@ const button3 = document.getElementById("js-btn-hook3");
 // button1 genera ciclo for per creare griglia facile
 
 button1.addEventListener("click", function () {
-  stampHtml.innerHTML = "";
-  for (i = 1; i <= 100; i++) {
-    easyBoxGenerator(stampHtml);
-  }
+  newGame(stampHtml, 100, easyBoxGenerator);
 });
 
 // button2 genera ciclo for per creare griglia facile
 
 button2.addEventListener("click", function () {
-  stampHtml.innerHTML = "";
-  for (i = 1; i <= 81; i++) {
-    mediumBoxGenerator(stampHtml);
-  }
+  newGame(stampHtml, 81, mediumBoxGenerator);
 });
 
 // button1 genera ciclo for per creare griglia facile
 
 button3.addEventListener("click", function () {
-  stampHtml.innerHTML = "";
-  for (i = 1; i <= 49; i++) {
-    hardBoxGenerator(stampHtml);
-  }
+  newGame(stampHtml, 49, hardBoxGenerator);
 });
