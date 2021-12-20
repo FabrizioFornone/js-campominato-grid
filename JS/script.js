@@ -8,56 +8,61 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.*
 
 // Funzione di generazione quadrati easy, "container" sarà il mio stampHtml
 
-function easyBoxGenerator(container) {
+function easyBoxGenerator(container, insideNumber) {
   // creo un elemento div dal JS
   const newBox = document.createElement("div");
   // Do a lui la classe square che ho nel css
   newBox.className = "square";
   // append al container
   container.append(newBox);
-//   container.innerText = num
+  //   append insideNumber al newBox
+  newBox.append(insideNumber);
   container.classList.remove("width-350");
   container.classList.remove("width-450");
   container.classList.add("width-500");
   newBox.addEventListener("click", function () {
     console.log(this);
-    this.classList.toggle("azure");
+    this.classList.add("azure");
   });
 }
 
 // Funzione di generazione quadrati medium, "container" sarà il mio stampHtml
 
-function mediumBoxGenerator(container) {
+function mediumBoxGenerator(container, insideNumber) {
   // creo un elemento div dal JS
   const newBox = document.createElement("div");
   // Do a lui la classe square che ho nel css
   newBox.className = "square";
   // append al container
   container.append(newBox);
+  //   append insideNumber al newBox
+  newBox.append(insideNumber);
   container.classList.remove("width-350");
   container.classList.remove("width-500");
   container.classList.add("width-450");
   newBox.addEventListener("click", function () {
     console.log(this);
-    this.classList.toggle("azure");
+    this.classList.add("azure");
   });
 }
 
 // Funzione di generazione quadrati medium, "container" sarà il mio stampHtml
 
-function hardBoxGenerator(container) {
+function hardBoxGenerator(container, insideNumber) {
   // creo un elemento div dal JS
   const newBox = document.createElement("div");
   // Do a lui la classe square che ho nel css
   newBox.className = "square";
   // append al container
   container.append(newBox);
+  //   append insideNumber al newBox
+  newBox.append(insideNumber);
   container.classList.remove("width-500");
   container.classList.remove("width-450");
   container.classList.add("width-350");
   newBox.addEventListener("click", function () {
     console.log(this);
-    this.classList.toggle("azure");
+    this.classList.add("azure");
   });
 }
 
@@ -66,7 +71,7 @@ function hardBoxGenerator(container) {
 function newGame(stampGrill, numberOfSquare, difficultyGenerator) {
   stampGrill.innerHTML = "";
   for (i = 1; i <= numberOfSquare; i++) {
-    difficultyGenerator(stampGrill);
+    difficultyGenerator(stampGrill, i);
   }
 }
 
@@ -86,13 +91,13 @@ button1.addEventListener("click", function () {
   newGame(stampHtml, 100, easyBoxGenerator);
 });
 
-// button2 genera ciclo for per creare griglia facile
+// button2 genera ciclo for per creare griglia media
 
 button2.addEventListener("click", function () {
   newGame(stampHtml, 81, mediumBoxGenerator);
 });
 
-// button1 genera ciclo for per creare griglia facile
+// button3 genera ciclo for per creare griglia difficile
 
 button3.addEventListener("click", function () {
   newGame(stampHtml, 49, hardBoxGenerator);
